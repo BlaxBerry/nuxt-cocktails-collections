@@ -17,5 +17,15 @@ export default defineNuxtConfig({
         classPrefix: 'theme-', // theme mode classname prefix
         classSuffix: '', // theme mode classname suffix
         storageKey: 'nuxt-color-mode'
-    }
+    },
+    
+    vite: {
+        css: {
+          preprocessorOptions: {
+            scss: {
+                additionalData: '@import "@/assets/styles/variables.scss";',
+            },
+          },
+        },
+      },
 });

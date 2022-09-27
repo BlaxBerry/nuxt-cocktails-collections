@@ -1,0 +1,12 @@
+.my-layout {
+  &-header {
+
+    // navigations 
+    .el-menu {
+      li,
+      .el-sub-menu__title {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

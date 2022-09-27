@@ -1,15 +1,46 @@
 body {
-    margin: 0;
-    font-family: "Kalam", "KiwiMaru";
+  margin: 0;
+  font-family: "Kalam", "KiwiMaru";
 }
 
 .my-layout {
-    min-height: 100vh;
-    min-width: 320px;
+  min-width: $screen-min-width;
+  position: relative;
+  $layout-header-height: 60px;
 
-    // &-header {}
+  // header
+  &-header {
+    background: $main-color-1;
+    color: #fff;
+    height: $layout-header-height;
+    position: fixed;
+    width: 100%;
+  }
 
-    // &-main {}
+  // main
+  &-main {
+    margin-top: $layout-header-height;
+  }
 
-    // &-footer {}
+
+  // footer
+  &-footer {
+    background-color: #fff;
+    color: $main-color-1;
+
+    .my-layout-footer-content {
+      padding: 50px;
+    
+      &-item {
+        color: $main-color-2;
+      }
+    }
+    
+    .my-copyright {
+      color: $main-color-2;
+      font-size: 0.5rem !important;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
 }
