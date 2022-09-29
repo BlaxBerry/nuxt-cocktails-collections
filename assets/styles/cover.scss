@@ -1,11 +1,41 @@
 .my-layout {
   &-header {
 
+    &>.el-row {
+      height: 100%;
+      align-items: center;
+
+      &>.el-col {
+        align-items: center;
+        display: flex;
+        height: 100%;
+      }
+    }
+
     // navigations 
     .el-menu {
+      width: 100%;
+      
       li,
       .el-sub-menu__title {
         font-size: 1.1rem;
+      }
+    }
+
+    .el-drawer {
+      background-color: $main-color-1;
+
+      &__header {
+        padding: 20px;
+        margin: 0;
+
+        h1 {
+          margin: 0;
+        }
+      }
+
+      &__body {
+        padding-top: 0;
       }
     }
   }
