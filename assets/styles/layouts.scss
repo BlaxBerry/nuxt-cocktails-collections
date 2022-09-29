@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Kalam", "KiwiMaru";
+  overflow-x: hidden;
 }
 
 .my-layout {
@@ -15,13 +16,13 @@ body {
     height: $layout-header-height;
     position: fixed;
     width: 100%;
+    z-index: 999;
   }
 
   // main
   &-main {
     margin-top: $layout-header-height;
   }
-
 
   // footer
   &-footer {
@@ -30,12 +31,12 @@ body {
 
     .my-layout-footer-content {
       padding: 50px;
-    
+
       &-item {
         color: $main-color-2;
       }
     }
-    
+
     .my-copyright {
       color: $main-color-2;
       font-size: 0.5rem !important;

@@ -11,7 +11,7 @@
       <h1>{{ drawerTitle }}</h1>
     </template>
 
-    <el-divider style="margin-top: 0;"/>
+    <el-divider style="margin-top: 0" />
 
     <!-- drawer content -->
     <slot />

@@ -1,21 +1,20 @@
 .my-layout {
   &-header {
-
-    &>.el-row {
+    & > .el-row {
       height: 100%;
       align-items: center;
 
-      &>.el-col {
+      & > .el-col {
         align-items: center;
         display: flex;
         height: 100%;
       }
     }
 
-    // navigations 
+    // navigations
     .el-menu {
       width: 100%;
-      
+
       li,
       .el-sub-menu__title {
         font-size: 1.1rem;
@@ -24,12 +23,16 @@
 
     .el-drawer {
       background-color: $main-color-1;
+      height: auto !important;
 
       &__header {
         padding: 20px;
         margin: 0;
 
-        h1 {
+        h1,
+        h2,
+        h3 {
+          color: $main-color-2;
           margin: 0;
         }
       }

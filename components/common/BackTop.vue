@@ -2,7 +2,7 @@
   <el-backtop
     :right="50"
     :bottom="100"
-    visibility-height="500"
+    :visibility-height="500"
     class="my-backtop"
   />
 </template>
