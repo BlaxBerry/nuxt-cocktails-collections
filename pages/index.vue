@@ -1,8 +1,8 @@
 <template>
     <div class="my-page-home">
        <HomePageWelcome/>
-       <HomePageSearch/>
        <HomePageAbout/>
+       <HomePageSearch/>
     </div>
 </template>
 
@@ -11,5 +11,4 @@
 </script>
 
 <style lang="scss" scoped>
-
 </style>

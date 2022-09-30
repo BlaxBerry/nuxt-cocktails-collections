@@ -4,14 +4,14 @@
     <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
       <CommonFooterContentContact />
     </el-col>
-    <el-col :span="6"  :xs="24" class="my-layout-footer-content-item">
+    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
       <CommonFooterContentAbout />
     </el-col>
-    <el-col :span="6"  :xs="24" class="my-layout-footer-content-item">
+    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
       <CommonFooterContentThanks />
     </el-col>
-    <el-col :span="6"  :xs="24" class="my-layout-footer-content-item"> 
-       LOGO
+    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
+      LOGO
     </el-col>
   </el-row>
 
@@ -23,3 +23,10 @@
 
 <script setup lang="ts"></script>
 
+<style lang="scss">
+.my-layout-footer-content {
+  background: $main-color-2 url("~/assets/images/background-wave.svg") center
+    top;
+  min-height: 50vh;
+}
+</style>
