@@ -22,9 +22,12 @@
 </template>
 
 <script setup lang="ts">
-const searchInput = ref("");
-const getSearchInputValue = (event: FocusEvent) => {
+const searchInput = ref<string>("");
+const { searchCocltailsList } = useRequestData();
+
+const getSearchInputValue = async (event: FocusEvent) => {
   console.log(searchInput.value);
+  console.log(await searchCocltailsList(searchInput.value));
 };
 </script>
 
