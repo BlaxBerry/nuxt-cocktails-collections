@@ -37,6 +37,18 @@ yarn install
 yarn run dev
 ```
 
+### Deploy on github pages
+
+1. generatie project to a static web app
+
+```shell
+yarn run generate
+```
+
+2. copy `.output/public` to branch `github-page`
+
+3. push the branch `github-page`
+
 ## Folders
 
 ```js
