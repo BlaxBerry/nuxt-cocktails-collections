@@ -24,10 +24,21 @@
 <script setup lang="ts">
 const searchInput = ref<string>("");
 const { queryCocltailsListByName } = useRequestData();
+const { queryCocltailsListByNameProduction } = useRequestDateProduction();
 
 const getSearchInputValue = async (event: FocusEvent) => {
-  console.log(searchInput.value);
-  console.log(await queryCocltailsListByName(searchInput.value));
+  // console.log(searchInput.value);
+  if (process.env.NODE_ENV === "production") {
+    console.log(
+      process.env.NODE_ENV,
+      await queryCocltailsListByNameProduction(searchInput.value)
+    );
+  } else {
+    console.log(
+      process.env.NODE_ENV,
+      await queryCocltailsListByName(searchInput.value)
+    );
+  }
 };
 </script>
 
