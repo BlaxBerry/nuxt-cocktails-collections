@@ -39,10 +39,27 @@ yarn run dev
 
 ## Folders
 
-```vue
-|- .nuxt |- assets |- fonts |- images |- styles |- components |- Common |- ...
-|- composables |- ... |- layouts |- pages |- plugins |- public |- server |- api
-|- utils |- nuxt.config.ts |- package.json |- tsconfig.json |- ...
+```js
+|- .nuxt
+|- assets
+  |- fonts
+  |- images
+  |- styles
+|- components
+  |- Common
+  |- ...
+|- composables
+  |- ...
+|- layouts
+|- pages
+|- plugins
+|- server
+  |- api
+  |- utils
+|- nuxt.config.ts
+|- package.json
+|- tsconfig.json
+|- ...
 ```
 
 ## Images
