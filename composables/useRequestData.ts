@@ -1,11 +1,11 @@
 export default function useRequestData() {
   /**
-   * Search cocktails list by params, whose name includes the params even if only one word.
+   * search cocktails list by name
    * @param cocktailName
    * @returns
    */
-  const searchCocltailsList = async (cocktailName: string) => {
-    return await $fetch(`/api/searchCocktailsList?name=${cocktailName}`);
+  const queryCocltailsListByName = async (cocktailName?: string) => {
+    return await $fetch(`/api/cocktails?name=${cocktailName}`);
   };
 
   /**
@@ -13,22 +13,70 @@ export default function useRequestData() {
    * @param cocktailID
    * @returns
    */
-  const searchCocltailDetail = async (cocktailID: string) => {
-    return await $fetch(`/api/searchCocktailDetail?id=${cocktailID}`);
+  const queryCocltailDetailByID = async (cocktailID: string) => {
+    return await $fetch(`/api/cocktail?id=${cocktailID}`);
   };
 
   /**
-   * Search drink's ingredients of the params.
-   * @param drinkName
+   * get (100x100 pixels) size image form cocktail object
+   * @param imgURL
    * @returns
    */
-  const searchIngredients = async (drinkName: string) => {
-    return await $fetch(`/api/searchIngredients?name=${drinkName}`);
+  const getCocktailImagePreview = (imgURL: string) => {
+    return `${imgURL}/preview`; // (100x100 pixels)
+  };
+
+  /**
+   * get the list of cocktals filtered by params
+   * @param filterName
+   * @param params
+   * @returns
+   */
+  const queryCocltailsListByFilter = async (
+    filterName: string,
+    params: string
+  ) => {
+    return await $fetch(`/api/cocktails?${filterName}=${params}`);
+  };
+
+  /**
+   * get the list of filters
+   * @param filterName
+   * @returns
+   */
+  const queryFiltersList = async (filterName: string) => {
+    return await $fetch(`/api/filters?name=${filterName}`);
+  };
+
+  /**
+   * Search cocktail's ingredients of the params.
+   *
+   * Basically used for getting the detail of ingredient from cocktail object
+   * @param ingredientName
+   * @returns
+   */
+  const queryIngredientDetail = async (ingredientName: string) => {
+    return await $fetch(`/api/ingredients?name=${ingredientName}`);
+  };
+
+  /**
+   * get ingredient's image of cocktail
+   *
+   * Basically used for getting the image of ingredient from cocktail object
+   * @param ingredientName
+   * @returns
+   */
+  const getIngredientImage = async (ingredientName: string) => {
+    return await $fetch(`/api/image?ingredient=${ingredientName}`);
   };
 
   return {
-    searchCocltailsList,
-    searchCocltailDetail,
-    searchIngredients,
+    queryCocltailsListByName,
+    queryCocltailDetailByID,
+    getCocktailImagePreview,
+    queryCocltailsListByFilter,
+    queryFiltersList,
+    queryIngredientDetail,
+    getIngredientImage,
   };
 }

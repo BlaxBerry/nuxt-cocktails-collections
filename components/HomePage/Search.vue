@@ -23,11 +23,11 @@
 
 <script setup lang="ts">
 const searchInput = ref<string>("");
-const { searchCocltailsList } = useRequestData();
+const { queryCocltailsListByName } = useRequestData();
 
 const getSearchInputValue = async (event: FocusEvent) => {
   console.log(searchInput.value);
-  console.log(await searchCocltailsList(searchInput.value));
+  console.log(await queryCocltailsListByName(searchInput.value));
 };
 </script>
 
