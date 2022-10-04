@@ -1,6 +1,8 @@
 export default function useRequestData() {
   /**
    * search cocktails list by name
+   * 
+   * params is not necessary, if name is not sent api will return all cocktails list sorted by first letter
    * @param cocktailName
    * @returns
    */

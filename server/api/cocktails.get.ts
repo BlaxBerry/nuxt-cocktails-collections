@@ -8,6 +8,7 @@
 
 import {
   SEARCH_COCKTAILS_BY_NAME,
+  SEARCH_COCKTAILS_SORTED_BY_FIRST_LETTER,
   FILTER_COCKTAILS_BY_CATEGORY,
   FILTER_COCKTAILS_BY_GLASS,
   FILTER_COCKTAILS_BY_INGREDIENT,
@@ -45,9 +46,9 @@ export default defineEventHandler(async (event) => {
     return res.body;
   }
 
-  // 3.
+  // 3. return all cocktails list sorted by first letter
   else {
-    const res = await fetch(SEARCH_COCKTAILS_BY_NAME + "");
+    const res = await fetch(SEARCH_COCKTAILS_SORTED_BY_FIRST_LETTER);
     return res.body;
   }
 });

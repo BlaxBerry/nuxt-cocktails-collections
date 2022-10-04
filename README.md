@@ -62,9 +62,7 @@ search cocktails list by name
 | params | String | the **name** of cocktail which is searching  |
 | return | Array  | list of cocktails whose name includes params |
 
-> If name' value is not sent, api will retunr all cocktails list
-
-> cocktail object includes SEARCH_INGREDIENTS_BY_NAME
+> params `name` is not necessary, if `name` is not sent api will return all cocktails list sorted by first lette
 
 ---
 
@@ -123,6 +121,8 @@ get the list of filters
 get the ingredient detail by params
 
 > Basically used for getting the detail of ingredient from cocktail object
+>
+> [cocktail object item](#cocktail-detail) includes ingredients item `strIngredient1`
 
 ---
 

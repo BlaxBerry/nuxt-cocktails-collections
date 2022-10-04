@@ -3,6 +3,8 @@
  */
 
 export const SEARCH_COCKTAILS_BY_NAME = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`;
+export const SEARCH_COCKTAILS_SORTED_BY_FIRST_LETTER = `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a`;
+
 export const SEARCH_COCKTAIL_BY_ID = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=`;
 
 export const FILTER_COCKTAILS_BY_CATEGORY = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=`;
