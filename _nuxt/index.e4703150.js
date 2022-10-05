@@ -1,0 +1,1 @@
+import{r as t,o as r,c as s,w as n,e as c,j as _}from"./entry.45e84c4e.js";import{_ as a}from"./_plugin-vue_export-helper.a1a6add7.js";const l={};function d(e,i){const o=t("el-divider");return r(),s(o,{class:"my-title"},{default:n(()=>[c("h1",null,[_(e.$slots,"default")])]),_:3})}const p=a(l,[["render",d]]);export{p as _};
