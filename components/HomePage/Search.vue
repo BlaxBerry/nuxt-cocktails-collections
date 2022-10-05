@@ -31,12 +31,13 @@ const getSearchInputValue = async (event: FocusEvent) => {
   if (process.env.NODE_ENV === "production") {
     console.log(
       process.env.NODE_ENV,
-      await queryCocltailsListByNameProduction(searchInput.value)
+      (await queryCocltailsListByNameProduction(searchInput.value))?.drinks
     );
   } else {
     console.log(
       process.env.NODE_ENV,
-      await queryCocltailsListByName(searchInput.value)
+      // @ts-ignore
+      (await queryCocltailsListByName(searchInput.value))?.drinks
     );
   }
 };

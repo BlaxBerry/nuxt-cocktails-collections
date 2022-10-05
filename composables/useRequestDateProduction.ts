@@ -27,7 +27,9 @@ export default function useRequestDataProduction() {
    * @returns
    */
   const queryCocltailsListByNameProduction = async (cocktailName?: string) => {
-    return (await fetch(SEARCH_COCKTAILS_BY_NAME + cocktailName)).body;
+    if (cocktailName)
+      return (await fetch(SEARCH_COCKTAILS_BY_NAME + cocktailName)).json();
+    return (await fetch(SEARCH_COCKTAILS_SORTED_BY_FIRST_LETTER)).json();
   };
 
   /**
@@ -36,7 +38,7 @@ export default function useRequestDataProduction() {
    * @returns
    */
   const queryCocltailDetailByIDProduction = async (cocktailID: string) => {
-    return (await fetch(SEARCH_COCKTAIL_BY_ID + cocktailID)).body;
+    return (await fetch(SEARCH_COCKTAIL_BY_ID + cocktailID)).json();
   };
 
   /**
@@ -61,15 +63,15 @@ export default function useRequestDataProduction() {
     // 2.1 filtered by [categories]
     switch (filterName) {
       case "category":
-        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).body;
+        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).json();
       case "ingredient":
-        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).body;
+        return (await fetch(FILTER_COCKTAILS_BY_INGREDIENT + params)).json();
       case "calcoholic":
-        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).body;
+        return (await fetch(FILTER_COCKTAILS_BY_ALCOHOLIC + params)).json();
       case "glass":
-        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).body;
+        return (await fetch(FILTER_COCKTAILS_BY_GLASS + params)).json();
       default:
-        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).body;
+        return (await fetch(FILTER_COCKTAILS_BY_CATEGORY + params)).json();
     }
   };
 
@@ -81,15 +83,15 @@ export default function useRequestDataProduction() {
   const queryFiltersListProduction = async (filterName: string) => {
     switch (filterName) {
       case "categories":
-        return (await fetch(LIST_OF_CATEGORIES)).body;
+        return (await fetch(LIST_OF_CATEGORIES)).json();
       case "ingredients":
-        return (await fetch(LIST_OF_INGREDIENTS)).body;
+        return (await fetch(LIST_OF_INGREDIENTS)).json();
       case "alcoholic":
-        return (await fetch(LIST_OF_ALCOHOLIC)).body;
+        return (await fetch(LIST_OF_ALCOHOLIC)).json();
       case "glasses":
-        return (await fetch(LIST_OF_GLASSES)).body;
+        return (await fetch(LIST_OF_GLASSES)).json();
       default:
-        return (await fetch(LIST_OF_CATEGORIES)).body;
+        return (await fetch(LIST_OF_CATEGORIES)).json();
     }
   };
 
@@ -101,7 +103,7 @@ export default function useRequestDataProduction() {
    * @returns
    */
   const queryIngredientDetailProduction = async (ingredientName: string) => {
-    return (await fetch(SEARCH_INGREDIENTS_BY_NAME + ingredientName)).body;
+    return (await fetch(SEARCH_INGREDIENTS_BY_NAME + ingredientName)).json();
   };
 
   /**
@@ -112,7 +114,7 @@ export default function useRequestDataProduction() {
    * @returns
    */
   const getIngredientImageProduction = async (ingredientName: string) => {
-    return (await fetch(IMAGE_OF_INGREDIENT + ingredientName + ".png")).body;
+    return (await fetch(IMAGE_OF_INGREDIENT + ingredientName + ".png")).json();
   };
 
   return {
