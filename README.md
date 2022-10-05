@@ -62,9 +62,12 @@ yarn run generate
   |- ...
 |- composables
   |- ...
+|- middleware
 |- layouts
 |- pages
 |- plugins
+|- public
+  |- .nojekyll
 |- server
   |- api
   |- utils
@@ -75,6 +78,8 @@ yarn run generate
 ```
 
 ## Images
+
+![](./public/images/home.png)
 
 ## APIs
 
