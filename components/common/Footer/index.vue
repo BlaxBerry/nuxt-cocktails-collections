@@ -1,17 +1,11 @@
 <template>
   <!-- contents grid -->
   <el-row :gutter="20" class="my-layout-footer-content">
-    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
+    <el-col :span="24" class="my-layout-footer-content-item">
       <CommonFooterContentContact />
     </el-col>
-    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
+    <el-col :span="24" class="my-layout-footer-content-item">
       <CommonFooterContentAbout />
-    </el-col>
-    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
-      <CommonFooterContentThanks />
-    </el-col>
-    <el-col :span="6" :xs="24" class="my-layout-footer-content-item">
-      LOGO
     </el-col>
   </el-row>
 
@@ -25,8 +19,8 @@
 
 <style lang="scss">
 .my-layout-footer-content {
-  background: $main-color-2 url("~/assets/images/background-wave.svg") center
-    top;
-  min-height: 50vh;
+  .el-col {
+    text-align: center;
+  }
 }
 </style>

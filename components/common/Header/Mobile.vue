@@ -13,6 +13,7 @@
     <el-menu
       :default-active="activeIndex"
       :ellipsis="false"
+      :router="true"
       @select="handleSelect"
       active-text-color="#c0856c"
       background-color="#242b32"
@@ -20,9 +21,9 @@
       style="border: 0"
       text-color="#fff"
     >
-      <el-menu-item index="1">Search</el-menu-item>
-      <el-menu-item index="2">Collections</el-menu-item>
-      <el-sub-menu index="3">
+      <el-menu-item index="search">Search</el-menu-item>
+      <el-menu-item index="home">Collections</el-menu-item>
+      <el-sub-menu index="3" disabled>
         <template #title>Categories</template>
         <el-menu-item index="3-1">item one</el-menu-item>
         <el-menu-item index="3-2">item two</el-menu-item>
@@ -33,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-const activeIndex = ref<string>("2");
+const activeIndex = ref<string>("home");
 
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);

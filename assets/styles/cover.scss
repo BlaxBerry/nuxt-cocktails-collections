@@ -44,4 +44,12 @@
   }
 }
 
-
+.my-page-search {
+  .my-title .el-divider__text {
+    background-color: transparent !important;
+    background-image: linear-gradient(white, rgba($theme-color-1, 0.5)),
+      url("~/assets/images/background-white.jpg");
+    background-position: 0px -30px;
+    background-size: 100vw 100vh;
+  }
+}

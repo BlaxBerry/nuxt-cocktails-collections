@@ -3,6 +3,7 @@ body {
   min-width: $screen-min-width;
   font-family: "Kalam", "KiwiMaru";
   overflow-x: hidden;
+  width: 100vw;
 }
 
 .my-layout {
@@ -28,10 +29,12 @@ body {
   // footer
   &-footer {
     .my-layout-footer-content {
-      padding: 50px;
+      color: $theme-color-2;
+      background-color: #4f4847;
+      padding: 20px 10%;
 
       &-item {
-        color: #fff;
+        margin: 1rem 0;
       }
     }
 
