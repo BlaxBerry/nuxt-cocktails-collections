@@ -20,18 +20,26 @@ const searchResultList = ref([]);
 const { queryCocltailsListByName } = useRequestData();
 const { queryCocltailsListByNameProduction } = useRequestDateProduction();
 
-const handleSearchInputValue = async (searchInputValue: string) => {
+const handleSearchInputValue = (searchInputValue: string) => {
+  init(searchInputValue)
+};
+
+const init = async (inputValue:string) => {
   if (process.env.NODE_ENV === "production") {
     const res = await // @ts-ignore
-    queryCocltailsListByNameProduction(searchInputValue)?.drinks;
+    queryCocltailsListByNameProduction(inputValue)?.drinks;
     searchResultList.value = res ? res : [];
   } else {
     // @ts-ignore
-    const res = (await queryCocltailsListByName(searchInputValue))?.drinks;
+    const res = (await queryCocltailsListByName(inputValue))?.drinks;
     searchResultList.value = res ? res : [];
   }
   // console.log(searchResultList.value);
-};
+}
+
+onMounted(() => {
+  init('')
+})
 </script>
 
 <style lang="scss" scoped>

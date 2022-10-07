@@ -1,5 +1,5 @@
 <template>
-  <el-image :src="src" loading lazy :fit="'cover'" style="display: block">
+  <el-image :src="src" loading="lazy" lazy :fit="'cover'" style="display: block">
     <!-- <template #placeholder>
       <div class="image-placeholder"></div>
     </template> -->
