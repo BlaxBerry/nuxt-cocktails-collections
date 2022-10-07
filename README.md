@@ -5,11 +5,15 @@
   |- ...
 |- [page name]
   |- index.html
-|- .nojekyll
-|- .gitignore
-|- // .git
 |- 200.html
 |- 400.html
 |- index.html
 |- README.md
+|- .nojekyll
+|- .gitignore
+|- .git
 ```
+
+![](./images/home.png)
+![](./images/search.png)
+![](./images/detail.png)
