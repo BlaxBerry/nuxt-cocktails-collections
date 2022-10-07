@@ -19,4 +19,4 @@ export const LIST_OF_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v1/1/li
 
 export const SEARCH_INGREDIENTS_BY_NAME = `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=`;
 
-export const IMAGE_OF_INGREDIENT = `www.thecocktaildb.com/images/ingredients/`;
+export const IMAGE_OF_INGREDIENT = `https://www.thecocktaildb.com/images/ingredients/`;

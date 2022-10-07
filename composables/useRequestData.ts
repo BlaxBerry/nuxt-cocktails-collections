@@ -1,7 +1,7 @@
 export default function useRequestData() {
   /**
    * search cocktails list by name
-   * 
+   *
    * params is not necessary, if name is not sent api will return all cocktails list sorted by first letter
    * @param cocktailName
    * @returns
@@ -68,8 +68,9 @@ export default function useRequestData() {
    * @param ingredientName
    * @returns
    */
-  const getIngredientImage = async (ingredientName: string) => {
-    return await $fetch(`/api/image?ingredient=${ingredientName}`);
+  const getIngredientImage = (ingredientName: string) => {
+    const IMAGE_OF_INGREDIENT = `https://www.thecocktaildb.com/images/ingredients/`;
+    return IMAGE_OF_INGREDIENT + ingredientName + "-Medium.png";
   };
 
   return {

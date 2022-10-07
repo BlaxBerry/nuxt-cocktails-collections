@@ -44,4 +44,12 @@
   }
 }
 
-
+.my-page-search {
+  .el-input {
+    .el-input-group__append,
+    .el-input-group__prepend {
+      background-color: $main-color-2 !important;
+      color: $theme-color-2 !important;
+    }
+  }
+}
