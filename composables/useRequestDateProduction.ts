@@ -16,7 +16,7 @@ const LIST_OF_GLASSES = `https://www.thecocktaildb.com/api/json/v1/1/list.php?g=
 const LIST_OF_INGREDIENTS = `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`;
 const LIST_OF_ALCOHOLIC = `https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list`;
 const SEARCH_INGREDIENTS_BY_NAME = `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=`;
-const IMAGE_OF_INGREDIENT = `www.thecocktaildb.com/images/ingredients/`;
+const IMAGE_OF_INGREDIENT = `https://www.thecocktaildb.com/images/ingredients/`;
 
 export default function useRequestDataProduction() {
   /**
@@ -106,17 +106,6 @@ export default function useRequestDataProduction() {
     return (await fetch(SEARCH_INGREDIENTS_BY_NAME + ingredientName)).json();
   };
 
-  /**
-   * get ingredient's image of cocktail
-   *
-   * Basically used for getting the image of ingredient from cocktail object
-   * @param ingredientName
-   * @returns
-   */
-  const getIngredientImageProduction = async (ingredientName: string) => {
-    return (await fetch(IMAGE_OF_INGREDIENT + ingredientName + ".png")).json();
-  };
-
   return {
     queryCocltailsListByNameProduction,
     queryCocltailDetailByIDProduction,
@@ -124,6 +113,5 @@ export default function useRequestDataProduction() {
     queryCocltailsListByFilterProduction,
     queryFiltersListProduction,
     queryIngredientDetailProduction,
-    getIngredientImageProduction,
   };
 }

@@ -1,28 +1,48 @@
 <template>
-  <el-divider class="my-title">
-    <h1>
-      <slot />
-    </h1>
-  </el-divider>
+  <div class="my-title">
+    <el-row :gutter="20">
+      <el-col :xs="0" :sm="8" class="diver-line left" />
+      <el-col :xs="24" :sm="8" class="diver-text">
+        <slot />
+      </el-col>
+      <el-col :xs="0" :sm="8" class="diver-line right" />
+    </el-row>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
 
 <style lang="scss">
-.my-title .el-divider__text {
-  font-size: 2rem;
-  color: $main-color-2;
-}
+.my-title {
+  position: relative;
+  margin-bottom: 20px;
 
-.el-divider--horizontal {
-  border-top-color: $main-color-2;
-}
+  .diver-text {
+    color: $main-color-2;
+    font-size: 3rem;
+    text-align: center;
+  }
 
-.theme-dark .my-title .el-divider__text {
-  background-color: $theme-color-1;
-}
+  .diver-line {
+    position: relative;
 
-.theme-light .my-title .el-divider__text {
-  background-color: $theme-color-2;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 80%;
+      border-top: 2px solid $main-color-2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .left::after {
+    right: 0;
+  }
+
+  .right::after {
+    left: 0;
+  }
 }
 </style>
