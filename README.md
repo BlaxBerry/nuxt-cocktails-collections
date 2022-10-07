@@ -80,6 +80,8 @@ yarn run generate
 ## Images
 
 ![](./public/images/home.png)
+![](./public/images/search.png)
+![](./public/images/detail.png)
 
 ## APIs
 
