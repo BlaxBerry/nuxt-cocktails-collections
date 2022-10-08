@@ -1,6 +1,6 @@
 <template>
   <el-main class="my-page-detail">
-    <div v-if="loading">{{ loading }}</div>
+    <div v-if="loading">{{ loading ? "loading..." : "" }}</div>
     <div v-else>
       <!-- title -->
       <CommonTitle>{{ cocktailDetail?.name }}</CommonTitle>
@@ -9,13 +9,15 @@
       <el-row :gutter="20" :justify="'center'" :align="'top'">
         <!-- image -->
         <el-col :span="20" :md="8">
-          <div><el-image :src="cocktailDetail?.img" alt="" /></div>
-          <small style="color: grey">{{ cocktailDetail?.imgSource }}</small>
+          <div>
+            <el-image :src="cocktailDetail?.img" :alt="cocktailDetail?.name" />
+            <!-- <small style="color: grey">{{ cocktailDetail?.imgSource }}</small> -->
+          </div>
         </el-col>
 
         <el-col :span="24" :md="14">
           <!-- how to make it -->
-          <p style="font-size: 1.2rem; margin-top: 0">
+          <p style="font-size: 1.3rem; margin-top: 0">
             {{ cocktailDetail?.instructions }}
           </p>
           <!-- ingredients -->

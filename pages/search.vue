@@ -6,40 +6,55 @@
     <div class="my-page-search-content">
       <!-- 2. input -->
       <SearchPageInput @onGetInputValue="handleSearchInputValue" />
+
+      <div v-if="searchResult.loading">
+        {{ searchResult.loading ? "loading..." : "" }}
+      </div>
       <!-- 3. list -->
-      <!-- <el-scrollbar max-height="70vh" style="padding: 20px 0 20px; overflow-x: hidden"> -->
-      <SearchPageList :list="searchResultList" />
-      <!-- </el-scrollbar> -->
+      <div v-else>
+        <SearchPageList :list="searchResult?.list" />
+      </div>
     </div>
   </el-main>
 </template>
 
 <script setup lang="ts">
-const searchResultList = ref([]);
+import { onMounted, reactive } from "vue";
+import useRequestData from "../composables/useRequestData";
+import useRequestDateProduction from "../composables/useRequestDateProduction";
+
+const searchResult = reactive({
+  list: [],
+  loading: false,
+});
 
 const { queryCocltailsListByName } = useRequestData();
 const { queryCocltailsListByNameProduction } = useRequestDateProduction();
 
 const handleSearchInputValue = (searchInputValue: string) => {
-  init(searchInputValue)
+  searchResult.loading = true;
+  init(searchInputValue);
 };
 
-const init = async (inputValue:string) => {
+const init = async (inputValue: string) => {
   if (process.env.NODE_ENV === "production") {
-    const res = await // @ts-ignore
-    queryCocltailsListByNameProduction(inputValue)?.drinks;
-    searchResultList.value = res ? res : [];
+    // @ts-ignore
+    const res = await queryCocltailsListByNameProduction(inputValue)?.drinks;
+    searchResult.list = res;
+    searchResult.loading = false;
   } else {
     // @ts-ignore
     const res = (await queryCocltailsListByName(inputValue))?.drinks;
-    searchResultList.value = res ? res : [];
+    searchResult.list = res;
+    searchResult.loading = false;
   }
-  // console.log(searchResultList.value);
-}
+  console.log(searchResult);
+};
 
 onMounted(() => {
-  init('')
-})
+  searchResult.loading = true;
+  init("");
+});
 </script>
 
 <style lang="scss" scoped>

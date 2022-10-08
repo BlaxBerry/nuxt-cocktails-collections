@@ -14,7 +14,7 @@
         />
       </div>
       <div style="text-align: center">
-        <strong>{{ item?.name }} </strong>
+        <strong>{{ item?.name }}</strong><br>
         <small>{{ item?.measure }}</small>
       </div>
     </el-col>
