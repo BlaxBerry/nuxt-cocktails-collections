@@ -39,7 +39,7 @@ const handleSearchInputValue = (searchInputValue: string) => {
 const init = async (inputValue: string) => {
   if (process.env.NODE_ENV === "production") {
     // @ts-ignore
-    const res = await queryCocltailsListByNameProduction(inputValue)?.drinks;
+    const res = (await queryCocltailsListByNameProduction(inputValue))?.drinks;
     searchResult.list = res;
     searchResult.loading = false;
   } else {
