@@ -33,6 +33,11 @@ export default defineNuxtConfig({
         },
       },
     },
+    server: {
+      watch: {
+        usePolling: true, // HMR (Hot Module Reload)
+      },
+    },
   },
 
   target: "static",
